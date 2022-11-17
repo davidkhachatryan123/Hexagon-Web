@@ -9,7 +9,7 @@ var lFollowX = 0,
     front_friction = 1 / 120,
     back_friction = 1 / 30;
 
-let animReq, isAFK = false, start_afk = false;
+let animReq, isAFK = true, start_afk = false;
 
 let start_x = 0, start_y = 0,
     dest_x = 0, dest_y = 0;
@@ -118,10 +118,6 @@ function moveBackgroundOnAFK(timeStamp) {
   animReq = window.requestAnimationFrame(moveBackgroundOnAFK);
 }
 
-function getRandomInt(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
 function easeLinear (t, b, c, d) {
   return c * t / d + b;
 }
@@ -151,3 +147,4 @@ $(window).on('mousemove click', function(e) {
 
 
 moveBackground();
+moveBackgroundOnAFK();
